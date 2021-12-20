@@ -8,25 +8,25 @@ namespace _01_KomodoCafe.Repository
 {
     public class MenuItemRepository
     {
-        private List<MenuItem> _menuItems = new List<MenuItem>();
+        private List<MenuItems> _menuItems = new List<MenuItems>();
 
         // Create
-        public void AddItemToList(MenuItem item)
+        public void AddItemToList(MenuItems item)
         {
             _menuItems.Add(item);
         }
 
         // Read
-        public List<MenuItem> GetItemsList()
+        public List<MenuItems> GetItemsList()
         {
             return _menuItems;
         }
 
         // Update
-        public bool UpdateExistingItems(string originalName, MenuItem newItem)
+        public bool UpdateExistingItems(string originalName, MenuItems newItem)
         {
             // Find the content
-            MenuItem oldItem = GetContentByMealName(originalName);
+            MenuItems oldItem = GetContentByMealName(originalName);
 
             // Update the content
             if (oldItem != null)
@@ -48,7 +48,7 @@ namespace _01_KomodoCafe.Repository
         // Delete
         public bool RemoveItemFromList(string mealName)
         {
-            MenuItem item = GetContentByMealName(mealName);
+            MenuItems item = GetContentByMealName(mealName);
             if (item == null)
             {
                 return false;
@@ -68,11 +68,11 @@ namespace _01_KomodoCafe.Repository
         }
 
         // Helper Method
-        public MenuItem GetContentByMealName(string mealName)
+        public MenuItems GetContentByMealName(string mealName)
         {
-            foreach (MenuItem item in _menuItems)
+            foreach (MenuItems item in _menuItems)
             {
-                if (item.MealName == mealName)
+                if (item.MealName.ToLower() == mealName.ToLower())
                 {
                     return item;
                 }

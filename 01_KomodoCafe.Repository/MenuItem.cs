@@ -17,7 +17,7 @@ namespace _01_KomodoCafe.Repository
     }
 
     // Plain Old C# Object
-    public class MenuItem
+    public class MenuItems
     {
         public int MealNumber { get; set; }
         public string MealName { get; set; }
@@ -25,9 +25,9 @@ namespace _01_KomodoCafe.Repository
         public IngredientType TypeofIngredient { get; set; }
         public decimal Price { get; set; }
 
-        public MenuItem() { }
+        public MenuItems() { }
 
-        public MenuItem(int mealNumber, string mealName, string description, IngredientType ingredient, decimal price)
+        public MenuItems(int mealNumber, string mealName, string description, IngredientType ingredient, decimal price)
         {
             MealNumber = mealNumber;
             MealName = mealName;
