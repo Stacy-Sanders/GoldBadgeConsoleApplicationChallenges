@@ -25,10 +25,10 @@ namespace _01_KomodoCafe.Repository
         // Update
         public bool UpdateExistingItems(string originalName, MenuItems newItem)
         {
-            // Find the content
+            // Find the item
             MenuItems oldItem = GetContentByMealName(originalName);
 
-            // Update the content
+            // Update the item
             if (oldItem != null)
             {
                 oldItem.MealNumber = newItem.MealNumber;
