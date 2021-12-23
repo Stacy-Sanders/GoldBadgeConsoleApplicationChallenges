@@ -34,7 +34,7 @@ namespace _01_KomodoCafe.Repository
                 oldItem.MealNumber = newItem.MealNumber;
                 oldItem.MealName = newItem.MealName;
                 oldItem.Description = newItem.Description;
-                oldItem.TypeofIngredient = newItem.TypeofIngredient;
+                oldItem.TypeOfIngredient = newItem.TypeOfIngredient;
                 oldItem.Price = newItem.Price;
 
                 return true;

@@ -151,7 +151,7 @@ namespace _01_KomodoCafe.UI
                 Console.WriteLine($"Meal Name: {items.MealName}\n" +
                     $"Meal Number: {items.MealNumber}\n" +
                     $"Description: {items.Description}\n" +
-                    $"Type of Ingredients: {items.TypeofIngredient}\n" +
+                    $"Type of Ingredients: {items.TypeOfIngredient}\n" +
                     $"Price: {items.Price}");
             }
             else
@@ -199,7 +199,7 @@ namespace _01_KomodoCafe.UI
 
             string ingredientAsString = Console.ReadLine();
             int ingredientAsInt = int.Parse(ingredientAsString);
-            newItem.TypeofIngredient = (IngredientType)ingredientAsInt;
+            newItem.TypeOfIngredient = (IngredientType)ingredientAsInt;
 
             // Price
             Console.WriteLine("Enter the Price for the item:");

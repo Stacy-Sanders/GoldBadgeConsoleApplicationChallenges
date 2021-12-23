@@ -168,7 +168,7 @@ namespace _06_KomodoGreenPlan.UI
             // Get the employee's input
             string fuelSourceAsString = Console.ReadLine();
             int fuelSourceAsInt = int.Parse(fuelSourceAsString);
-            var fuelSource = (FuelType)fuelSourceAsInt; ;
+            var fuelSource = (FuelType)fuelSourceAsInt; 
 
             // Find the content by that title
             VehicleContent content = _vehicleRepo.GetVehicleByFuelSource(fuelSource);
