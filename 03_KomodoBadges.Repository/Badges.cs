@@ -9,14 +9,14 @@ namespace _03_KomodoBadges.Repository
     public class Badges
     {
         public int BadgeID { get; set; }
-        public string DoorName { get; set; }
+        public List<string> DoorNames { get; set; }
         
         public Badges() { }
 
-        public Badges(int badgeID, string doorName)
+        public Badges(int badgeID, List<string> doorNames)
         {
             BadgeID = badgeID;
-            DoorName = doorName;
+            DoorNames = doorNames;
         }
     }
 }

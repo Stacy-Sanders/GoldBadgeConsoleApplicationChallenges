@@ -8,47 +8,80 @@ namespace _03_KomodoBadges.Repository
 {
     public class BadgeIDRepository
     {
-        private List<Badges> _badgeList = new List<Badges>();
-        public void BadgeAccessList()
-        {
-            var badges = new Dictionary<int, string>()
-            {
-            { 12345, "A2, A7, B4"},
-            { 22345, "A2, A3, C8"},
-            { 32345, "B3, B4"}
-            };
-        }
-
+        private Dictionary<int, Badges> _badgeList = new Dictionary<int, Badges>();
+        private int _count;
         // Create
-        public void AddBadgeToList (Badges badge)
+        public bool AddBadgeToList (Badges badge)
         {
-            _badgeList.Add(badge);
+            if (badge is null)
+            {
+                return false;
+            }
+            else
+            {
+                _count++;
+                badge.BadgeID = _count;
+                _badgeList.Add(badge.BadgeID, badge);
+
+                return true;
+            }
         }
 
         // Read
-        public List<Badges> GetBadgeList()
+        public Dictionary<int, Badges> GetBadgeList()
         {
             return _badgeList;
         }
 
 
         // Helper Method
-        
-
-        // Update
-        public bool UpdateDoorAccess(string orignalAccess, Badges newAccess)
+        public Badges GetBadgeByKey(int key)
         {
-            // Find the Access
-
-            //Update the Access
-            if(IDictionary.ContainsKey(originalAccess))
+            foreach (var badge in _badgeList)
+            {
+                if (badge.Key==key)
+                {
+                    return badge.Value;
+                }
+            }
+            return null;
         }
 
-        // Delete
-    
-    
+        // Update
+        public bool AddDoor(int key, string doorName)
+        {
+            var badge = GetBadgeByKey(key);
+            if (badge != null)
+            {
+                badge.DoorNames.Add(doorName);
+                return true;
+            }
+            return false;
+        }
+        public bool RemoveDoor(int key, string doorName)
+        {
+            var badge = GetBadgeByKey(key);
+            if (badge != null)
+            {
+                foreach (var door in badge.DoorNames)
+                {
+                    if (door==doorName)
+                    {
+                        badge.DoorNames.Remove(door);
+                        return true;
+                    }
+
+                }
+            }
+            return false;
+        }
+
     }
 }
+
+       
+            
+    
     
     
        
