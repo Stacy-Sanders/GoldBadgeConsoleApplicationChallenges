@@ -1,4 +1,4 @@
-# Gold Badge Challenges
+# [Gold Badge Challenges](./GoldBadgeChallenges/GoldBadgeChallenges.sln)
 
 As a Software Development student at Eleven Fifty Academy, a Gold Badge Challenge is the final step to pass in order to move onto the Blue Badge.
 
@@ -9,7 +9,7 @@ The three challenges I chose (in order of completion) included:
 This challenge included creating repository project with an object class and a class acting as our repository, a console application to act as our user interface, and lastly a unit test if time allowed. 
 We created a UI for the cafe manager to list the menu items, create new items, update items, and delete items. The items could be called by meal name.
 
-## 06 - Komodo Green Plan
+## 06 - Komodo Green Plan (./GoldBadgeChallenges/GoldBadgeChallenges.sln)
 This challenge required us to create the same projects, while allowing the Komodo Insurance employee to sort and review information based on a vehicle's fuel type -
 1. Standard Gas
 2. Electric
