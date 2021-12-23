@@ -48,7 +48,7 @@ namespace _04_KomodoOutings.UI
                         break;
                     case "3":
                         // View Total Cost of Outings
-                        //DisplayTotalCostOfOutings();
+                        DisplayTotalCostOfOutings();
                         break;
                     case "4":
                         // View Cost By Outing Type
@@ -83,6 +83,7 @@ namespace _04_KomodoOutings.UI
                     $"Attendance: {content.Attendance}\n" +
                     $"Date: {content.DateOfEvent}");
             }
+            Console.ReadKey();
         }
 
         // Create An Outing
@@ -121,16 +122,12 @@ namespace _04_KomodoOutings.UI
         }
 
         // View Total Cost of Outings
-        /*private void DisplayTotalCostOfOutings()
+        private void DisplayTotalCostOfOutings()
         {
             Console.Clear();
-            List<Outings> outingsContent = _outingsRepo.GetTotalEventCosts();
-
-            foreach (var item in collection)
-            {
-
-            }
-        }*/
+            Console.WriteLine($"Total Cost for outings: {_outingsRepo.GetTotalEventCosts()}");
+            Console.ReadKey();
+        }
 
         // View Cost By Outing Type
         private void DisplayCostByOutingType()
@@ -147,19 +144,8 @@ namespace _04_KomodoOutings.UI
             int typeOfEventAsInt = int.Parse(typeOfEventAsString);
             var typeOfEvent = (EventType)typeOfEventAsInt;
 
-            _outingsRepo.GetContentByOuting(typeOfEvent);
 
-            foreach (Outings initialValue in outings)
-            {
-
-            }
-            {
-                Console.WriteLine($"Total cost: {initialValue.TypeOfEvent}");
-            }
-
-            /*var outing = _outingsRepo.GetContentByOuting(typeOfEvent);
-            object initialValue = null;
-            Console.WriteLine($"Event Cost: {TotalEventCost}");*/
+            Console.WriteLine($"Total cost for {typeOfEvent}: {_outingsRepo.GetContentByOuting(typeOfEvent)}");
             
         }
             
